@@ -1,0 +1,737 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     31893,        729]
+NotebookOptionsPosition[     30680,        691]
+NotebookOutlinePosition[     31057,        707]
+CellTagsIndexPosition[     31014,        704]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+$targetFile has been set
+$thisDir has also been set
+
+Now, we need output the webpage containing inputs and outputs.
+
+I am working in a nb to do this because I think we might need some of the FE \
+features for importing/exporting, but I am not sure.\
+\>", "Text",
+ CellChangeTimes->{{3.6678074017551856`*^9, 3.6678074367736626`*^9}, {
+  3.6678076076625786`*^9, 3.6678076436238174`*^9}, {3.6678076825593023`*^9, 
+  3.6678076890605507`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"$thisDir", " ", "=", " ", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], ";", "\n", 
+   RowBox[{"$targetFile", " ", "=", " ", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{"$thisDir", ",", " ", "\"\<test.nb\>\""}], "}"}], "]"}]}], 
+   ";"}], "*)"}]], "Code",
+ CellChangeTimes->{{3.6678090418882627`*^9, 3.667809074722804*^9}, {
+   3.667809161610437*^9, 3.6678091938865924`*^9}, 3.6678208254622736`*^9, {
+   3.6678218026517367`*^9, 3.6678218063235393`*^9}, {3.6678222314592676`*^9, 
+   3.667822256376217*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$outputLog", " ", "=", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$thisDir", ",", " ", "\"\<logFile.txt\>\""}], "}"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Put", "[", 
+    RowBox[{"\"\<DEBUGGIN' LOG\>\"", ",", " ", "$outputLog"}], "]"}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"log", "[", 
+    RowBox[{"name_", ",", " ", "data_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"CompoundExpression", "[", "\n", "\t", 
+    RowBox[{
+     RowBox[{"PutAppend", "[", 
+      RowBox[{"\"\< \>\"", ",", " ", "$outputLog"}], "]"}], ";", "\n", "\t", 
+     RowBox[{"PutAppend", "[", 
+      RowBox[{"name", ",", " ", "$outputLog"}], "]"}], ";", "\n", "\t", 
+     RowBox[{"PutAppend", "[", 
+      RowBox[{"\"\< \>\"", ",", " ", "$outputLog"}], "]"}], ";", "\n", "\t", 
+     RowBox[{"PutAppend", "[", 
+      RowBox[{"data", ",", " ", "$outputLog"}], "]"}]}], "\n", "]"}]}], 
+  ";"}]}], "Code",
+ CellChangeTimes->{{3.665333302631922*^9, 3.6653333103645325`*^9}, {
+  3.6653423852155447`*^9, 3.6653423868786793`*^9}, {3.6678054101538644`*^9, 
+  3.6678054343166046`*^9}, {3.6678055714457827`*^9, 3.6678055800848475`*^9}, {
+  3.667805901683956*^9, 3.6678059131934967`*^9}, {3.667807349180449*^9, 
+  3.6678073513997455`*^9}, {3.667807451192132*^9, 3.6678074537142873`*^9}, {
+  3.6678077327587605`*^9, 3.6678077751190643`*^9}, {3.667807988880843*^9, 
+  3.6678079954230995`*^9}, {3.667808028111018*^9, 3.6678081281955485`*^9}, {
+  3.6678082607187605`*^9, 3.667808440976322*^9}, {3.6678085577327023`*^9, 
+  3.6678087293168545`*^9}, {3.6678087841289415`*^9, 3.667808784635713*^9}, {
+  3.6678224326881523`*^9, 3.6678224460075054`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"log", "[", 
+   RowBox[{"\"\<opening nb\>\"", ",", " ", "Now"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"nb", " ", "=", " ", 
+    RowBox[{"NotebookOpen", "[", "$targetFile", "]"}]}], ";"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+   "HAVE", " ", "USER", " ", "EVALUATE", " ", "IT", " ", "BEFOREHAND", " ", 
+    "FOR", " ", "NOW"}], "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"log", "[", 
+     RowBox[{"\"\<nb\>\"", ",", " ", "nb"}], "]"}], ";"}], "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"NotebookEvaluate", "[", 
+     RowBox[{"nb", ",", " ", 
+      RowBox[{"InsertResults", " ", "\[Rule]", " ", "True"}]}], "]"}], ";", 
+    "\n", 
+    RowBox[{"log", "[", 
+     RowBox[{"\"\<done evaluating\>\"", ",", " ", "Now"}], "]"}], ";"}], 
+   "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"log", "[", 
+   RowBox[{"\"\<getting nb\>\"", ",", " ", "Now"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"raw", " ", "=", " ", 
+   RowBox[{"NotebookGet", "[", "nb", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"log", "[", 
+     RowBox[{"\"\<raw\>\"", ",", " ", "raw"}], "]"}], ";"}], 
+   "*)"}]}]}], "Code",
+ CellChangeTimes->{{3.6678077096719856`*^9, 3.6678077233260183`*^9}, {
+   3.6678077851026554`*^9, 3.667807795618272*^9}, {3.6678078468404384`*^9, 
+   3.667807888163769*^9}, 3.6678079291367407`*^9, {3.667807968473912*^9, 
+   3.667807969069376*^9}, {3.6678081987723274`*^9, 3.66780819941169*^9}, {
+   3.667808753101726*^9, 3.6678087726764746`*^9}, {3.6678125276410475`*^9, 
+   3.6678125433091497`*^9}, {3.6678125790074167`*^9, 3.6678125887914*^9}, {
+   3.6678216715895576`*^9, 3.6678216755226192`*^9}, {3.667821810911317*^9, 
+   3.667821949199944*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cellTransformer", "[", "raw_Cell", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", "\n", "\t", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"cell", ",", " ", 
+      RowBox[{"caption", " ", "=", " ", "None"}], ",", " ", "serialVersion", 
+      ",", " ", "htmlVersion", ",", " ", "cellStyle"}], "}"}], ",", "\n", 
+    "\t", 
+    RowBox[{
+     RowBox[{"cell", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"raw", " ", "/.", " ", 
+        RowBox[{"{", "\n", "\t\t\t", 
+         RowBox[{
+          RowBox[{"Cell", "[", 
+           RowBox[{
+            RowBox[{"body", ":", "_"}], ",", " ", 
+            RowBox[{"opts", ":", 
+             RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], " ", 
+          "\[RuleDelayed]", " ", 
+          RowBox[{"Cell", "[", 
+           RowBox[{"body", ",", " ", "\"\<NoStyle\>\""}], 
+           RowBox[{"(*", 
+            RowBox[{",", " ", "opts"}], "*)"}], "]"}]}], "\n", "\t\t", 
+         "}"}]}], " ", "/.", " ", 
+       RowBox[{"{", "\n", "\t\t\t", 
+        RowBox[{
+         RowBox[{"Cell", "[", 
+          RowBox[{"body_", ",", " ", "style_", ",", " ", "stuff___"}], "]"}], 
+         " ", "\[RuleDelayed]", " ", 
+         RowBox[{"Cell", "[", 
+          RowBox[{"body", ",", " ", "style"}], 
+          RowBox[{"(*", 
+           RowBox[{",", " ", 
+            RowBox[{"Sequence", " ", "@@", " ", 
+             RowBox[{"Cases", "[", 
+              RowBox[{
+               RowBox[{"{", "stuff", "}"}], ",", " ", 
+               RowBox[{"OptionsPattern", "[", "]"}]}], "]"}]}]}], "*)"}], 
+          "]"}]}], "\n", "\t\t", "}"}]}]}], ";", "\n", "\t", 
+     RowBox[{"cellStyle", " ", "=", " ", 
+      RowBox[{"cell", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], ";", "\n", "\t", 
+     RowBox[{"Which", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"MatchQ", "[", 
+        RowBox[{"cellStyle", ",", " ", 
+         RowBox[{
+         "\"\<Input\>\"", " ", "|", " ", "\"\<Code\>\"", " ", "|", " ", 
+          "\"\<Output\>\""}]}], " ", "]"}], ",", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"serialVersion", " ", "=", " ", 
+         RowBox[{"InputForm", " ", "@", " ", 
+          RowBox[{"MakeExpression", "[", "\[IndentingNewLine]", "\t\t\t", 
+           RowBox[{
+            RowBox[{"StripBoxes", " ", "@", " ", 
+             RowBox[{"cell", "[", 
+              RowBox[{"[", "1", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+            "\t\t\t", "StandardForm"}], "\[IndentingNewLine]", "\t\t", 
+           "]"}]}]}], ";", "\n", "\t\t", 
+        RowBox[{"htmlVersion", " ", "=", " ", 
+         RowBox[{"StringReplace", "[", "\n", "\t\t\t", 
+          RowBox[{
+           RowBox[{"ToString", " ", "@", " ", "serialVersion"}], ",", "\n", 
+           "\t\t\t", 
+           RowBox[{
+            RowBox[{
+            "\"\<HoldComplete[\>\"", " ", "~~", " ", "s__", " ", "~~", " ", 
+             "\"\<]\>\""}], " ", "\[RuleDelayed]", " ", "\n", "\t\t\t", 
+            "s"}]}], "\n", "\t\t", "]"}]}], ";", "\n", "\t\t", 
+        RowBox[{"caption", " ", "=", " ", 
+         RowBox[{"StringDrop", "[", 
+          RowBox[{
+           RowBox[{"SpokenString", "[", 
+            RowBox[{"ToExpression", "[", 
+             RowBox[{
+              RowBox[{"cell", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", " ", "StandardForm", ",", 
+              " ", "Hold"}], "]"}], "]"}], ",", " ", "8"}], "]"}]}], ";"}], 
+       "\n", "\t\t", ",", "\n", "\t\t", "True", ",", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"serialVersion", " ", "=", " ", 
+         RowBox[{"Replace", "[", "\n", "\t\t\t", 
+          RowBox[{"cell", ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"Cell", "[", 
+             RowBox[{"stuff_", ",", " ", "style_", ",", " ", 
+              RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], " ", 
+            "\[RuleDelayed]", " ", "\n", "\t\t\t", 
+            RowBox[{"Module", "[", "\n", "\t\t\t\t", 
+             RowBox[{
+              RowBox[{"{", "str", "}"}], ",", "\n", "\t\t\t\t", 
+              RowBox[{
+               RowBox[{"str", " ", "=", " ", 
+                RowBox[{"ToString", " ", "@", " ", 
+                 RowBox[{"InputForm", " ", "@", " ", 
+                  RowBox[{"MakeExpression", "[", 
+                   RowBox[{"stuff", ",", " ", "TraditionalForm"}], 
+                   "]"}]}]}]}], ";", "\n", "\t\t\t\t", 
+               RowBox[{"StringReplace", "[", "\n", "\t\t\t\t\t", 
+                RowBox[{"str", ",", "\n", "\t\t\t\t\t", 
+                 RowBox[{
+                  RowBox[{
+                  "\"\<HoldComplete[\>\"", " ", "~~", " ", "s__", " ", "~~", 
+                   " ", "\"\<]\>\""}], " ", "\[RuleDelayed]", " ", "\n", 
+                  "\t\t\t\t\t", "s"}]}], "\n", "\t\t\t\t", "]"}]}]}], "\n", 
+             "\t\t\t", "]"}]}], ",", " ", "\n", "\t\t\t", "Infinity"}], "\n", 
+          "\t\t", "]"}]}], ";", "\n", "\t\t", 
+        RowBox[{"htmlVersion", " ", "=", " ", 
+         RowBox[{"Replace", "[", "\n", "\t\t\t", 
+          RowBox[{"serialVersion", ",", "\n", "\t\t\t", 
+           RowBox[{"{", "\n", "\t\t\t\t", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Cell", "[", 
+               RowBox[{"s_String", ",", " ", "_", ",", " ", 
+                RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], " ", 
+              "\[RuleDelayed]", " ", "s"}], ",", "\n", "\t\t\t\t", 
+             RowBox[{
+              RowBox[{"Cell", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Alternatives", "[", 
+                  RowBox[{"TextData", ",", " ", "BoxData"}], "]"}], "[", 
+                 RowBox[{"s", ":", "_String"}], "]"}], ",", " ", "_", ",", 
+                " ", 
+                RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], " ", 
+              "\[RuleDelayed]", " ", "s"}], ",", "\n", "\t\t\t\t", 
+             RowBox[{
+              RowBox[{"Cell", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Alternatives", "[", 
+                  RowBox[{"TextData", ",", " ", "BoxData"}], "]"}], "[", 
+                 RowBox[{"s", ":", 
+                  RowBox[{"{", "___String", "}"}]}], "]"}], ",", " ", "_", 
+                ",", " ", 
+                RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], " ", 
+              "\[RuleDelayed]", " ", 
+              RowBox[{"StringRiffle", "[", 
+               RowBox[{"s", ",", " ", "\"\< \>\""}], "]"}]}]}], "\n", 
+            "\t\t\t", "}"}], ",", "\n", "\t\t\t", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", " ", "Infinity"}], "}"}]}], "\n", "\t\t", 
+          "]"}]}], ";"}]}], "\n", "\t", "]"}], ";", "\n", "\n", "\t", 
+     RowBox[{"htmlVersion", " ", "=", " ", 
+      RowBox[{"StringReplace", "[", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"ToString", " ", "@", " ", "htmlVersion"}], ",", " ", 
+        RowBox[{"{", "\n", "\t\t\t", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"g", ":", 
+            RowBox[{"(", 
+             RowBox[{
+             "\"\<Graphics[\>\"", " ", "~~", " ", "___", " ", "~~", " ", 
+              "\"\<]\>\""}], ")"}]}], " ", "\[RuleDelayed]", " ", 
+           RowBox[{"ExportString", "[", 
+            RowBox[{
+             RowBox[{"ToExpression", " ", "@", " ", "g"}], ",", 
+             "\"\<SVG\>\""}], "]"}]}], ",", "\n", "\t\t\t", 
+          RowBox[{
+           RowBox[{"i", ":", 
+            RowBox[{"(", 
+             RowBox[{
+             "\"\<Image[\>\"", " ", "~~", " ", "___", " ", "~~", " ", 
+              "\"\<]\>\""}], ")"}]}], " ", "\[RuleDelayed]", " ", 
+           RowBox[{"ExportString", "[", 
+            RowBox[{
+             RowBox[{"ToExpression", " ", "@", " ", "i"}], ",", 
+             "\"\<SVG\>\""}], "]"}]}]}], "\n", "\t\t", "}"}]}], "\n", "\t", 
+       "]"}]}], ";", "\n", "\n", "\t", 
+     RowBox[{"output", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"ToString", " ", "@", " ", "cellStyle"}], " ", "->", " ", 
+       "htmlVersion"}]}], ";", "\n", "\t", 
+     RowBox[{"If", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"caption", " ", "===", " ", "None"}], ",", "\n", "\t\t", 
+       RowBox[{"Return", "[", "output", "]"}], ",", "\n", "\t\t", 
+       RowBox[{"Return", "[", 
+        RowBox[{"{", 
+         RowBox[{"output", ",", " ", 
+          RowBox[{"\"\<Description\>\"", " ", "\[Rule]", " ", "caption"}]}], 
+         "}"}], "]"}]}], "\n", "\t", "]"}], ";"}]}], "\n", "]"}]}]], "Code",
+ CellChangeTimes->{{3.667809651727642*^9, 3.667809810172635*^9}, {
+   3.6678098412489605`*^9, 3.6678098674116015`*^9}, {3.6678099370944414`*^9, 
+   3.6678100049165525`*^9}, {3.6678103831800995`*^9, 
+   3.6678104741813793`*^9}, {3.6678105077157383`*^9, 
+   3.6678105429417906`*^9}, {3.6678107524695597`*^9, 3.667810765077769*^9}, {
+   3.6678108621681204`*^9, 3.6678109700230083`*^9}, {3.6678110849040437`*^9, 
+   3.6678111413528385`*^9}, {3.6678111740395546`*^9, 
+   3.6678112735914483`*^9}, {3.6678123866432133`*^9, 3.667812389649101*^9}, {
+   3.6678124304449425`*^9, 3.667812464685047*^9}, {3.667812496908004*^9, 
+   3.6678125192595243`*^9}, {3.6678126026919165`*^9, 3.667812616351658*^9}, {
+   3.6678127016816235`*^9, 3.667812731425046*^9}, 3.6678127705081387`*^9, {
+   3.667812837982869*^9, 3.667812891526737*^9}, {3.6678131489392104`*^9, 
+   3.6678132047535677`*^9}, {3.6678132625570383`*^9, 3.667813263113514*^9}, {
+   3.667813948581525*^9, 3.667813981277523*^9}, {3.6678140157681427`*^9, 
+   3.6678140428912425`*^9}, {3.6678141080076866`*^9, 3.667814151378646*^9}, {
+   3.6678142161119175`*^9, 3.6678142802786274`*^9}, {3.6678143449479103`*^9, 
+   3.6678144690356426`*^9}, {3.6678146459645834`*^9, 3.667814650244864*^9}, {
+   3.667814709295641*^9, 3.667814810982258*^9}, {3.667814895446125*^9, 
+   3.667814915924451*^9}, {3.667815038975958*^9, 3.667815067166216*^9}, {
+   3.6678151138256226`*^9, 3.6678151571525035`*^9}, {3.667815202894208*^9, 
+   3.6678152221186624`*^9}, {3.667816772778142*^9, 3.6678168354577055`*^9}, {
+   3.667816887173135*^9, 3.6678171335887947`*^9}, {3.667817174102768*^9, 
+   3.6678172111653724`*^9}, {3.667817243944836*^9, 3.6678172447302456`*^9}, {
+   3.66781727814509*^9, 3.6678172921039114`*^9}, {3.667817322666625*^9, 
+   3.667817352956935*^9}, {3.6678174053610725`*^9, 3.6678174861425805`*^9}, 
+   3.6678179619847584`*^9, {3.6678180447078876`*^9, 3.6678180542574773`*^9}, {
+   3.6678182187039433`*^9, 3.667818220930747*^9}, {3.6678182981572866`*^9, 
+   3.6678183008027644`*^9}, {3.6678183395162945`*^9, 3.667818354817554*^9}, 
+   3.66781848818571*^9, {3.6678185861464453`*^9, 3.6678185873054953`*^9}, {
+   3.667818634235643*^9, 3.6678186505657005`*^9}, {3.667818844319823*^9, 
+   3.6678189716001663`*^9}, {3.667819470391362*^9, 3.667819737716197*^9}, 
+   3.6678197931908426`*^9, 3.667819882863381*^9, {3.6678199312182083`*^9, 
+   3.667820009348079*^9}, {3.6678203916870255`*^9, 3.6678203997938275`*^9}, {
+   3.667821093295656*^9, 3.6678211327136755`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"log", "[", 
+   RowBox[{"\"\<reading cells\>\"", ",", " ", "Now"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"cells", " ", "=", " ", 
+   RowBox[{"NotebookRead", " ", "/@", " ", 
+    RowBox[{"Cells", "[", "nb", "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"log", "[", 
+   RowBox[{"\"\<transforming cells\>\"", ",", " ", "Now"}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"content", " ", "=", " ", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"cellTransformer", " ", "/@", " ", "cells"}], ",", " ", "1"}], 
+    "]"}]}], ";"}]}], "Code",
+ CellChangeTimes->{{3.667809215258804*^9, 3.6678092461988*^9}, {
+   3.6678092849258595`*^9, 3.6678092892953596`*^9}, {3.6678093751826096`*^9, 
+   3.6678093806880035`*^9}, {3.6678098820856066`*^9, 3.667809894967903*^9}, {
+   3.6678149790332212`*^9, 3.6678150174086914`*^9}, {3.6678151647778616`*^9, 
+   3.667815171604426*^9}, 3.6678184853729267`*^9, {3.667818605063898*^9, 
+   3.667818625249836*^9}, {3.667819748104972*^9, 3.6678197571760626`*^9}, 
+   3.6678204617494154`*^9, 3.667820907318683*^9, {3.667821958001582*^9, 
+   3.667821976116005*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ToExpression", "::", "notstrbox"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"OutputFormData\\\", \\\"[\\\
+\", RowBox[{\\\"\\\\\\\"Graphics[{{{{}, {}, {Directive[Opacity[1.], \
+RGBColor[0.368417, 0.506779, 0.7\\\\\\\"\\\", \\\"\[Ellipsis]\\\", \\\"\\\\\\\
+\"led[0.02]}, {Scaled[0.02], Scaled[0.02]}}, Ticks -> {Automatic, \
+Automatic}}]\\\\\\\"\\\"}], \\\"]\\\"}]\\)\[NoBreak] is not a string or a \
+box. ToExpression can only interpret strings or boxes as Wolfram Language \
+input. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ToExpression/notstrbox\\\", ButtonNote -> \
+\\\"ToExpression::notstrbox\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220898279567`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"StringDrop", "::", "drop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot drop positions \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"1\\\"}]\\)\[NoBreak] through \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"8\\\"}]\\)\[NoBreak] in \
+\\\"\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"$Failed\\\\\\\"\\\"}]\\)\[NoBreak]\
+\\\". \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/StringDrop/drop\\\", \
+ButtonNote -> \\\"StringDrop::drop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220898799973`*^9}],
+
+Cell["\<\
+ToExpression::sntxi: 
+   Incomplete expression; more input is needed 
+
+    .\
+\>", "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.667822089913022*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ToExpression", "::", "notstrbox"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"OutputFormData\\\", \\\"[\\\
+\", \\\"\\\\\\\"Manipulate[Plot[{Re[Exp[I*k*x]*u[x]], Im[Exp[I*k*x]*u[x]]}, \
+{x, -10, 10}, ImageSize -> Large], {{k, 0, Wave-Vector}, 0, 10}]\\\\\\\"\\\", \
+\\\"]\\\"}]\\)\[NoBreak] is not a string or a box. ToExpression can only \
+interpret strings or boxes as Wolfram Language input. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ToExpression/notstrbox\\\", ButtonNote -> \
+\\\"ToExpression::notstrbox\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.667822090194239*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"StringDrop", "::", "drop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot drop positions \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"1\\\"}]\\)\[NoBreak] through \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"8\\\"}]\\)\[NoBreak] in \
+\\\"\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"$Failed\\\\\\\"\\\"}]\\)\[NoBreak]\
+\\\". \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/StringDrop/drop\\\", \
+ButtonNote -> \\\"StringDrop::drop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220902369366`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ToExpression", "::", "notstrbox"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"OutputFormData\\\", \\\"[\\\
+\", \\\"\\\\\\\"Manipulate[Plot[Exp[I*k*x]*u[x]*Conjugate[Exp[I*k*x]*u[x]], \
+{x, -10, 10}, ImageSize -> Large], {{k, 0, Wave-Vector}, 0, 10}]\\\\\\\"\\\", \
+\\\"]\\\"}]\\)\[NoBreak] is not a string or a box. ToExpression can only \
+interpret strings or boxes as Wolfram Language input. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ToExpression/notstrbox\\\", ButtonNote -> \
+\\\"ToExpression::notstrbox\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220904205723`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"ToExpression\\\", \\\"::\\\", \
+\\\"notstrbox\\\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed \
+during this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220904736204`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"StringDrop", "::", "drop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot drop positions \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"1\\\"}]\\)\[NoBreak] through \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"8\\\"}]\\)\[NoBreak] in \
+\\\"\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"$Failed\\\\\\\"\\\"}]\\)\[NoBreak]\
+\\\". \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/StringDrop/drop\\\", \
+ButtonNote -> \\\"StringDrop::drop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220905181494`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"StringDrop\\\", \\\"::\\\", \
+\\\"drop\\\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during \
+this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.667822090566476*^9}],
+
+Cell["\<\
+ToExpression::sntxi: 
+   Incomplete expression; more input is needed 
+
+    .\
+\>", "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.66782209319051*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Integrate", "::", "nodiffd"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{SubsuperscriptBox[\\\"\
+\[Integral]\\\", \\\"0\\\", \\\"1\\\"], RowBox[{\\\"\[Psi]\\\", \\\" \\\", \
+SuperscriptBox[\\\"\[Psi]\\\", \\\"*\\\"], RowBox[{\\\"\[DifferentialD]\\\", \
+\\\"\[Xi]\\\", \\\" \\\"}]}]}]\\)\[NoBreak] cannot be interpreted. Integrals \
+are entered in the form \\!\\(\[Integral]f\[DifferentialD]x\\), \
+\\!\\(\\*SubsuperscriptBox[\\(\[Integral]\\), \\(a\\),\\(b\\)]f\
+\[DifferentialD]x\\), or \\!\\(\\*UnderscriptBox[\\(\[Integral]\\),\\(vars \
+\[Element] region\\)]f\\), where \\!\\(\[DifferentialD]\\) is entered as \
+\[EscapeKey]dd\[EscapeKey]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Integrate/nodiffd\\\", ButtonNote -> \
+\\\"Integrate::nodiffd\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220932965884`*^9}],
+
+Cell["\<\
+ToExpression::sntxi: 
+   Incomplete expression; more input is needed 
+
+    .\
+\>", "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220947085238`*^9}],
+
+Cell["\<\
+General::stop: 
+   Further output of ToExpression::sntxi
+     will be suppressed during this
+     calculation.\
+\>", "Message", "MSG",
+ CellChangeTimes->{{3.6678209040815406`*^9, 3.6678209443974857`*^9}, 
+   3.667821287467075*^9, 3.6678220947105255`*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", " ", "@", " ", "toHTML"}], " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Class\>\"", " ", "\[Rule]", " ", "None"}], "}"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"toHTML", "[", 
+   RowBox[{"type_", ",", " ", "label_", ",", " ", "content_", ",", " ", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", "\n", "\t", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"class", " ", "=", " ", 
+      RowBox[{"OptionValue", "[", "\"\<Class\>\"", "]"}]}], "}"}], ",", "\n", 
+    "\t", 
+    RowBox[{"If", "[", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"MatchQ", "[", 
+       RowBox[{"class", ",", " ", "None"}], "]"}], ",", "\n", "\t\t", 
+      RowBox[{
+      "\"\<<\>\"", " ", "<>", " ", "type", " ", "<>", " ", "\"\<>\>\"", " ", "<>",
+        " ", "label", " ", "<>", " ", "\"\<: \>\"", " ", "<>", " ", "content",
+        " ", "<>", " ", "\"\<</\>\"", " ", "<>", " ", "type", " ", "<>", " ", 
+       "\"\<>\>\""}], ",", "\n", "\t\t", 
+      RowBox[{
+      "\"\<<\>\"", " ", "<>", " ", "type", " ", "<>", " ", 
+       "\"\< class=\\\"\>\"", " ", "<>", " ", "class", " ", "<>", " ", 
+       "\"\<\\\">\>\"", " ", "<>", " ", "label", " ", "<>", " ", "\"\<: \>\"",
+        " ", "<>", " ", "content", " ", "<>", " ", "\"\<</\>\"", " ", "<>", 
+       " ", "type", " ", "<>", " ", "\"\<>\>\""}]}], "\n", "\t", "]"}]}], 
+   "\n", "]"}]}]}], "Code",
+ CellChangeTimes->{{3.6678153806898685`*^9, 3.667815591343435*^9}, {
+  3.667815630150115*^9, 3.6678157397250166`*^9}, {3.667820059276814*^9, 
+  3.667820113139799*^9}, {3.667820153745138*^9, 3.667820172991942*^9}, {
+  3.667820255628783*^9, 3.6678202581908197`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"makeElement", "[", 
+   RowBox[{"cellStyle_", " ", "\[Rule]", " ", "content_"}], "]"}], " ", ":=", 
+  " ", 
+  RowBox[{"Module", "[", "\n", "\t", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\n", "\t", 
+    RowBox[{"Switch", "[", "\n", "\t\t", 
+     RowBox[{"cellStyle", ",", "\n", "\t\t", "\"\<Title\>\"", ",", " ", 
+      RowBox[{"toHTML", "[", 
+       RowBox[{"\"\<h1\>\"", ",", "cellStyle", ",", " ", "content"}], "]"}], 
+      ",", "\n", "\t\t", "\"\<Chapter\>\"", ",", " ", 
+      RowBox[{"toHTML", "[", 
+       RowBox[{"\"\<h2\>\"", ",", " ", "cellStyle", ",", " ", "content"}], 
+       "]"}], ",", "\n", "\t\t", "\"\<Subchapter\>\"", ",", " ", 
+      RowBox[{"toHTML", "[", 
+       RowBox[{"\"\<h3\>\"", ",", " ", "cellStyle", ",", " ", "content"}], 
+       "]"}], ",", "\n", "\t\t", "\"\<Section\>\"", ",", " ", 
+      RowBox[{"toHTML", "[", 
+       RowBox[{"\"\<h4\>\"", ",", " ", "cellStyle", ",", " ", "content"}], 
+       "]"}], ",", "\n", "\t\t", "\"\<Subsection\>\"", ",", " ", 
+      RowBox[{"toHTML", "[", 
+       RowBox[{"\"\<h5\>\"", ",", " ", "cellStyle", ",", " ", "content"}], 
+       "]"}], ",", "\n", "\t\t", "\"\<Subsubsection\>\"", ",", " ", 
+      RowBox[{"toHTML", "[", 
+       RowBox[{"\"\<h6\>\"", ",", " ", "cellStyle", ",", " ", "content"}], 
+       "]"}], ",", "\n", "\t\t", "_", ",", " ", 
+      RowBox[{"toHTML", "[", 
+       RowBox[{
+       "\"\<p\>\"", ",", " ", "cellStyle", ",", " ", "content", ",", " ", 
+        RowBox[{"\"\<Class\>\"", " ", "\[Rule]", " ", "cellStyle"}]}], 
+       "]"}]}], "\n", "\n", "\t", "]"}]}], "\n", "]"}]}]], "Code",
+ CellChangeTimes->{{3.667815243137787*^9, 3.6678153724041104`*^9}, {
+  3.667815756374055*^9, 3.667815943013348*^9}, {3.667820182420505*^9, 
+  3.6678202008007293`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", " ", "=", " ", 
+   RowBox[{
+   "XMLTemplate", "[", 
+    "\"\<<html>\n<head>\n<style TYPE=\\\"text/css\\\">\n.Input {\n\tborder: \
+1px solid black;\n}\n.Message {\n\tborder: 1px solid red;\n}\n.Output {\n\t\
+border: 1px solid gray;\n}\n</style>\n</head>\n<body>\n<wolfram:sequence \
+values='#content'>\n\t<wolfram:slot id='1'/>\n</wolfram:sequence>\n</body>\n\
+</html>\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"log", "[", 
+   RowBox[{"\"\<applying template\>\"", ",", " ", "Now"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"output", " ", "=", " ", 
+    RowBox[{"TemplateApply", "[", 
+     RowBox[{"t", ",", " ", 
+      RowBox[{"<|", 
+       RowBox[{"\"\<content\>\"", " ", "\[Rule]", " ", 
+        RowBox[{"makeElement", " ", "/@", " ", "content"}]}], "|>"}]}], 
+     "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"log", "[", 
+   RowBox[{"\"\<exporting\>\"", ",", " ", "Now"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Export", "[", "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"$thisDir", ",", " ", "\"\<ConvertedFromNB.html\>\""}], "}"}], 
+      "]"}], ",", "\[IndentingNewLine]", "\t", "output", ",", "\n", "\t", 
+     "\"\<Text\>\""}], "\[IndentingNewLine]", "]"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"NotebookClose", "[", 
+   RowBox[{"nb", ",", " ", 
+    RowBox[{"Interactive", "\[Rule]", "False"}]}], "]"}], ";"}]}], "Code",
+ CellChangeTimes->{{3.667816013901602*^9, 3.6678160172522993`*^9}, {
+   3.6678160571589556`*^9, 3.6678161691370225`*^9}, 3.6678162141356974`*^9, {
+   3.6678162479683323`*^9, 3.667816297771655*^9}, {3.667816355013959*^9, 
+   3.6678164256820884`*^9}, {3.6678165291786394`*^9, 
+   3.6678165819920864`*^9}, {3.6678219876308002`*^9, 
+   3.6678220220979376`*^9}, {3.6678220839495387`*^9, 
+   3.6678220867367783`*^9}, {3.6678224713004017`*^9, 3.667822484792948*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.667822059032314*^9, 3.6678220814565487`*^9}}]
+},
+WindowSize->{889, 661},
+WindowMargins->{{146, Automatic}, {Automatic, 70}},
+Magnification:>1.4 Inherited,
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (February 25, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 448, 11, 206, "Text"],
+Cell[1009, 33, 584, 13, 96, "Code"],
+Cell[1596, 48, 1703, 36, 271, "Code"],
+Cell[3302, 86, 1732, 44, 271, "Code"],
+Cell[5037, 132, 10862, 220, 1571, "Code"],
+Cell[CellGroupData[{
+Cell[15924, 356, 1159, 26, 146, "Code"],
+Cell[17086, 384, 923, 16, 107, "Message"],
+Cell[18012, 402, 692, 13, 31, "Message"],
+Cell[18707, 417, 228, 7, 96, "Message"],
+Cell[18938, 426, 832, 14, 107, "Message"],
+Cell[19773, 442, 692, 13, 31, "Message"],
+Cell[20468, 457, 834, 14, 107, "Message"],
+Cell[21305, 473, 650, 13, 31, "Message"],
+Cell[21958, 488, 692, 13, 31, "Message"],
+Cell[22653, 503, 641, 13, 31, "Message"],
+Cell[23297, 518, 227, 7, 96, "Message"],
+Cell[23527, 527, 1069, 18, 114, "Message"],
+Cell[24599, 547, 230, 7, 96, "Message"],
+Cell[24832, 556, 264, 7, 96, "Message"]
+}, Open  ]],
+Cell[25111, 566, 1721, 37, 296, "Code"],
+Cell[26835, 605, 1782, 35, 396, "Code"],
+Cell[28620, 642, 1959, 44, 821, "Code"],
+Cell[30582, 688, 94, 1, 42, "Input"]
+}
+]
+*)
+
